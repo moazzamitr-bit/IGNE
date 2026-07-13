@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IGNE Website
 
-## Getting Started
+Official bilingual website for **اندیشکده حکمرانی و اقتصاد نوین / Institute for New Governance and Economy**.
 
-First, run the development server:
+## Tech Stack
+
+Next.js App Router, TypeScript strict mode, React Server Components by default, Tailwind CSS v4, CSS design tokens, `next/image`, `next/font`, Lucide React, Vitest, React Testing Library, Playwright, ESLint, and Prettier.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `/fa` for Persian and `/en` for English.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+npm run test:e2e
+```
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+Content is stored in `src/data` and accessed through `src/lib/content/repository.ts`. This adapter is intentionally shaped so it can later be replaced by Strapi, Directus, Sanity, or another CMS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To add a publication, add a `Publication` record to `src/data/publications.ts`. Use `demo: true` only for temporary content and remove it for verified official content.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To add an event, add an `Event` record to `src/data/events.ts`. Future and past events are separated by date.
 
-## Deploy on Vercel
+To add a locale, update `src/lib/i18n/config.ts`, dictionaries, route generation, and all localized data records.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Social links live in `src/data/settings.ts`; leave them blank until real URLs are available.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Structure
+
+- `src/app/[locale]`: localized routes
+- `src/components`: layout, navigation, home, research, publications, events, news, forms, and shared UI
+- `src/data`: seed/demo content and settings
+- `src/lib`: i18n, content repository, dates, search, validation, and SEO helpers
+- `src/styles/tokens.css`: design tokens
+- `docs`: design system, content model, missing assets, deployment notes
+
+## Deployment
+
+The project is ready for a standard Next.js deployment. Configure the canonical domain in metadata, sitemap, and robots when the production domain is final.
