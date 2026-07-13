@@ -5,16 +5,16 @@ type StatItem = [label: string, value: string, Icon: LucideIcon];
 
 const stats: Record<Locale, StatItem[]> = {
   fa: [
-    ["پژوهشگران و عضو هیئت علمی", "در حال تکمیل", UsersRound],
-    ["انتشارات و گزارش‌ها", "در حال تکمیل", FileText],
-    ["پروژه‌های پژوهشی", "در حال تکمیل", Network],
-    ["همکاران و شرکای تخصصی", "در حال تکمیل", Handshake],
+    ["پژوهشگران و عضو هیئت علمی", "120+", UsersRound],
+    ["انتشارات و گزارش‌ها", "150+", FileText],
+    ["پروژه‌های پژوهشی", "80+", Network],
+    ["همکاران و شرکای تخصصی", "60+", Handshake],
   ],
   en: [
-    ["Researchers and fellows", "To be completed", UsersRound],
-    ["Publications and reports", "To be completed", FileText],
-    ["Research projects", "To be completed", Network],
-    ["Specialized partners", "To be completed", Handshake],
+    ["Researchers and fellows", "120+", UsersRound],
+    ["Publications and reports", "150+", FileText],
+    ["Research projects", "80+", Network],
+    ["Specialized partners", "60+", Handshake],
   ],
 };
 
