@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Vazirmatn } from "next/font/google";
+import { assetPath } from "@/lib/assets/path";
 import "./globals.css";
 
 const vazirmatn = Vazirmatn({
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "اندیشکده حکمرانی و اقتصاد نوین",
     description: "جایی که اندیشه تصمیم می‌سازد",
-    images: ["/images/tehran-alborz-hero.png"],
+    images: [assetPath("/images/tehran-alborz-hero.png")],
   },
 };
 

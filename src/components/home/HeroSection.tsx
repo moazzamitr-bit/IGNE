@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/lib/assets/path";
 import type { Locale } from "@/lib/i18n/config";
 
 export function HeroSection({ locale }: { locale: Locale }) {
   return (
     <section className="hero-section">
       <div className="hero-section__media" aria-hidden="true">
-        <Image src="/images/tehran-alborz-hero.png" alt="" fill preload loading="eager" sizes="(min-width: 1024px) 58vw, 100vw" />
+        <Image src={assetPath("/images/tehran-alborz-hero.png")} alt="" fill preload loading="eager" sizes="(min-width: 1024px) 58vw, 100vw" />
       </div>
       <div className="container hero-section__inner">
         <div className="hero-slider" aria-hidden="true"><span /><span /><span /></div>

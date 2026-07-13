@@ -1,4 +1,7 @@
 import type { Event } from "@/lib/content/types";
+import { assetPath } from "@/lib/assets/path";
+
+const eventImage = assetPath("/images/events-roundtable.png");
 
 export const events: Event[] = [
   {
@@ -12,7 +15,7 @@ export const events: Event[] = [
     location: "در حال تکمیل",
     format: "حضوری و آنلاین",
     speakers: [],
-    image: "/images/events-roundtable.png",
+    image: eventImage,
     registrationStatus: "soon",
     capacity: "در حال تکمیل",
     gallery: [],
@@ -30,7 +33,7 @@ export const events: Event[] = [
     location: "در حال تکمیل",
     format: "نشست عمومی",
     speakers: [],
-    image: "/images/events-roundtable.png",
+    image: eventImage,
     registrationStatus: "closed",
     gallery: [],
     files: [],
@@ -47,7 +50,7 @@ export const events: Event[] = [
     location: "To be completed",
     format: "Hybrid",
     speakers: [],
-    image: "/images/events-roundtable.png",
+    image: eventImage,
     registrationStatus: "soon",
     capacity: "To be completed",
     gallery: [],

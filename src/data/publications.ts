@@ -1,7 +1,8 @@
 import type { Publication } from "@/lib/content/types";
+import { assetPath } from "@/lib/assets/path";
 
-const publicationImage = "/images/publications-research-desk.png";
-const analysisImage = "/images/research-analysis-studio.png";
+const publicationImage = assetPath("/images/publications-research-desk.png");
+const analysisImage = assetPath("/images/research-analysis-studio.png");
 
 export const publications: Publication[] = [
   {

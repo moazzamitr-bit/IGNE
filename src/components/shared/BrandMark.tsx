@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assets/path";
 import type { Locale } from "@/lib/i18n/config";
 import { t } from "@/lib/i18n/dictionaries";
 
@@ -6,7 +7,7 @@ export function BrandMark({ locale, inverse = false }: { locale: Locale; inverse
   return (
     <div className={`brand-mark ${inverse ? "brand-mark--inverse" : ""}`} aria-label={t(locale, "brandFa")}>
       <span className="brand-mark__symbol" aria-hidden="true">
-        <Image src="/brand/igne-symbol.png" alt="" width={92} height={72} priority />
+        <Image src={assetPath("/brand/igne-symbol.png")} alt="" width={92} height={72} priority />
       </span>
       <span className="brand-mark__text">
         <strong>{locale === "fa" ? t(locale, "brandFa") : t(locale, "brandEn")}</strong>

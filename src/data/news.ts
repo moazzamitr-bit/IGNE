@@ -1,4 +1,7 @@
 import type { NewsItem } from "@/lib/content/types";
+import { assetPath } from "@/lib/assets/path";
+
+const mediaImage = assetPath("/images/media-studio.png");
 
 export const news: NewsItem[] = [
   {
@@ -9,7 +12,7 @@ export const news: NewsItem[] = [
     excerpt: "خبر نمونه برای نمایش ساختار صفحه اخبار؛ محتوای رسمی پس از تأمین داده جایگزین می‌شود.",
     category: "اخبار اندیشکده",
     publishedAt: "2026-06-02",
-    image: "/images/media-studio.png",
+    image: mediaImage,
     demo: true,
   },
   {
@@ -20,7 +23,7 @@ export const news: NewsItem[] = [
     excerpt: "Demo news item for the media page structure.",
     category: "Institute News",
     publishedAt: "2026-06-02",
-    image: "/images/media-studio.png",
+    image: mediaImage,
     demo: true,
   },
 ];

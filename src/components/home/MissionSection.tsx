@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/lib/assets/path";
 import type { Locale } from "@/lib/i18n/config";
 
 export function MissionSection({ locale }: { locale: Locale }) {
@@ -14,7 +15,7 @@ export function MissionSection({ locale }: { locale: Locale }) {
           </Link>
         </div>
         <div className="mission-emblem">
-          <Image src="/images/mission-policy-impact.png" alt="" width={900} height={563} sizes="(min-width: 1024px) 58vw, 100vw" loading="eager" />
+          <Image src={assetPath("/images/mission-policy-impact.png")} alt="" width={900} height={563} sizes="(min-width: 1024px) 58vw, 100vw" loading="eager" />
         </div>
       </div>
     </section>
