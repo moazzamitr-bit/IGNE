@@ -10,13 +10,19 @@ export function PolicyPathSection({ locale }: { locale: Locale }) {
   const Arrow = locale === "fa" ? ArrowLeft : ArrowRight;
   return (
     <section className="policy-path-section">
-      <div className="container policy-path-intro">
-        <div>
-          <h2>{locale === "fa" ? "از دانش تا اثرگذاری در سیاست" : "From Knowledge to Policy Influence"}</h2>
-          <p>{locale === "fa" ? "مدل کاری اندیشکده، پژوهش را به گفت‌وگو و گزینه‌های قابل اقدام برای تصمیم‌سازان پیوند می‌دهد." : "Our working model connects research with dialogue and actionable options for decision-makers."}</p>
-        </div>
-        <div className="policy-path-intro__media" aria-hidden="true">
-          <Image src={assetPath("/images/mission-policy-impact.png")} alt="" fill sizes="(min-width: 1024px) 42vw, 100vw" />
+      <div className="policy-path-hero">
+        <Image
+          src={assetPath("/images/policy-lab-roundtable.webp")}
+          alt={locale === "fa" ? "نشست تخصصی تحلیل سیاست با نقشه و اسناد پژوهشی" : "Policy analysis session with research documents and maps"}
+          fill
+          sizes="100vw"
+        />
+        <div className="container policy-path-hero__inner">
+          <div className="policy-path-hero__copy">
+            <h2>{locale === "fa" ? "از دانش تا اثرگذاری در سیاست" : "From Knowledge to Policy Influence"}</h2>
+            <span aria-hidden="true" />
+            <p>{locale === "fa" ? "مدل کاری اندیشکده، پژوهش را به گفت‌وگو و گزینه‌های قابل اقدام برای تصمیم‌سازان پیوند می‌دهد." : "Our working model connects research with dialogue and actionable options for decision-makers."}</p>
+          </div>
         </div>
       </div>
       <div className="container policy-path">
