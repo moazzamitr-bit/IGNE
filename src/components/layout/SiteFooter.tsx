@@ -24,9 +24,10 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         </div>
         <div>
           <h2>{locale === "fa" ? "اطلاعات تماس" : "Contact"}</h2>
-          <p>{settings.contact.address[locale]}</p>
-          <p>{settings.contact.email || (locale === "fa" ? "ایمیل در حال تکمیل" : "Email to be completed")}</p>
-          <p>{settings.contact.phone || (locale === "fa" ? "تلفن در حال تکمیل" : "Phone to be completed")}</p>
+          {settings.contact.address[locale] && settings.contact.address[locale] !== "در حال تکمیل" && settings.contact.address[locale] !== "To be completed" ? <p>{settings.contact.address[locale]}</p> : null}
+          {settings.contact.email ? <p>{settings.contact.email}</p> : null}
+          {settings.contact.phone ? <p>{settings.contact.phone}</p> : null}
+          <Link href={`/${locale}/contact`}>{locale === "fa" ? "فرم ارتباط با اندیشکده" : "Contact the institute"}</Link>
         </div>
       </div>
       <div className="container site-footer__bottom">

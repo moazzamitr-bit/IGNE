@@ -1,35 +1,23 @@
-import { FileText, Handshake, Network, UsersRound, type LucideIcon } from "lucide-react";
+import { BadgeCheck, Radio, Route, Share2, type LucideIcon } from "lucide-react";
+import { successIndicators } from "@/data/institute-profile";
 import type { Locale } from "@/lib/i18n/config";
 
-type StatItem = [label: string, value: string, Icon: LucideIcon];
-
-const stats: Record<Locale, StatItem[]> = {
-  fa: [
-    ["پژوهشگران و عضو هیئت علمی", "120+", UsersRound],
-    ["انتشارات و گزارش‌ها", "150+", FileText],
-    ["پروژه‌های پژوهشی", "80+", Network],
-    ["همکاران و شرکای تخصصی", "60+", Handshake],
-  ],
-  en: [
-    ["Researchers and fellows", "120+", UsersRound],
-    ["Publications and reports", "150+", FileText],
-    ["Research projects", "80+", Network],
-    ["Specialized partners", "60+", Handshake],
-  ],
-};
+const icons: LucideIcon[] = [BadgeCheck, Radio, Share2, Route];
 
 export function StatsPanel({ locale }: { locale: Locale }) {
   return (
-    <section className="home-stats" aria-label={locale === "fa" ? "اندیشکده در یک نگاه" : "Institute at a glance"}>
-      <h2>{locale === "fa" ? "اندیشکده در یک نگاه" : "Institute at a Glance"}</h2>
+    <section className="home-stats" aria-label={locale === "fa" ? "شاخص‌های موفقیت" : "Success indicators"}>
+      <h2>{locale === "fa" ? "شاخص‌های موفقیت" : "Success Indicators"}</h2>
+      <p>{locale === "fa" ? "چارچوب ارزیابی پیشرفت اندیشکده" : "How the institute evaluates progress"}</p>
       <div className="home-stats__grid">
-        {stats[locale].map(([label, value, Icon]) => (
-          <article key={label}>
+        {successIndicators.map((indicator, index) => {
+          const Icon = icons[index];
+          return <article key={indicator.title.en}>
             <Icon aria-hidden="true" strokeWidth={1.6} />
-            <strong>{value}</strong>
-            <span>{label}</span>
-          </article>
-        ))}
+            <strong>{indicator.title[locale]}</strong>
+            <span>{indicator.text[locale]}</span>
+          </article>;
+        })}
       </div>
     </section>
   );

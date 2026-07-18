@@ -10,7 +10,7 @@ export function PublicationCard({ item, locale }: { item: Publication; locale: L
   return (
     <article className="publication-card">
       <div className="publication-card__image">
-        <Image src={item.image} alt="" fill sizes="(min-width: 1024px) 22vw, 80vw" />
+        <Image src={item.image} alt="" fill sizes="(min-width: 1024px) 22vw, 80vw" loading={item.featured ? "eager" : "lazy"} />
       </div>
       <div className="publication-card__body">
         <span className="meta-row">{item.type}{item.demo ? ` · ${t(locale, "demo")}` : ""}</span>

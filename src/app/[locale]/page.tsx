@@ -3,6 +3,9 @@ import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { HeroSection } from "@/components/home/HeroSection";
 import { MissionSection } from "@/components/home/MissionSection";
 import { StatsPanel } from "@/components/home/StatsPanel";
+import { StrategicAxesSection } from "@/components/home/StrategicAxesSection";
+import { PolicyPathSection } from "@/components/home/PolicyPathSection";
+import { CollaborationPanel } from "@/components/home/CollaborationPanel";
 import { PublicationRail } from "@/components/publications/PublicationRail";
 import { ResearchAreaGrid } from "@/components/research/ResearchAreaGrid";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -24,6 +27,8 @@ export default async function LocaleHome({ params }: { params: Promise<{ locale:
   return (
     <>
       <HeroSection locale={typedLocale} />
+      <StrategicAxesSection locale={typedLocale} />
+      <PolicyPathSection locale={typedLocale} />
       <section className="section section--ivory">
         <div className="container">
           <SectionHeading
@@ -46,7 +51,8 @@ export default async function LocaleHome({ params }: { params: Promise<{ locale:
         </div>
       </section>
       <section className="section section--ivory home-bottom-section">
-        <div className="container two-column-section">
+        <div className="container home-insight-grid">
+          <CollaborationPanel locale={typedLocale} />
           <div>
             <SectionHeading title={typedLocale === "fa" ? "رویدادهای پیش رو" : "Upcoming Events"} action={{ label: typedLocale === "fa" ? "همه رویدادها" : "All events", href: `/${typedLocale}/events` }} />
             <div className="event-list">{events.slice(0, 3).map((event) => <EventCard key={event.id} item={event} locale={typedLocale} />)}</div>

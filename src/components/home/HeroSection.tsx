@@ -17,8 +17,8 @@ export function HeroSection({ locale }: { locale: Locale }) {
           <div className="hero-rule" />
           <p className="hero-copy__lead">
             {locale === "fa"
-              ? "اندیشکده حکمرانی و اقتصاد نوین، نهادی مستقل و غیرانتفاعی است که با هدف تولید دانش راهبردی، توسعه حکمرانی و کمک به تصمیم‌سازی‌های کلان کشور فعالیت می‌کند."
-              : "The Institute for New Governance and Economy is an independent non-profit institution producing strategic knowledge and supporting high-level decision-making."}
+              ? "اندیشکده حکمرانی و اقتصاد نوین، بستری برای پیوند دانش، گفت‌وگو و تصمیم‌سازی در مسیر پیشرفت ایران است."
+              : "The Institute for New Governance and Economy connects knowledge, dialogue, and decision-making in support of Iran's progress."}
           </p>
           <div className="hero-actions">
             <Link className="button button--primary" href={`/${locale}/about`}>{locale === "fa" ? "درباره اندیشکده" : "About IGNE"}</Link>
