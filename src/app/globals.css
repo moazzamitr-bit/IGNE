@@ -112,6 +112,30 @@ html {
   color: var(--color-text-light);
 }
 
+.brand-mark--header {
+  display: block;
+  width: 206px;
+  height: 58px;
+}
+
+.brand-mark--header-en {
+  width: 270px;
+}
+
+.brand-mark__header-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.brand-mark__header-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
 .brand-mark__symbol {
   display: grid;
   place-items: center;
@@ -1868,6 +1892,12 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  .brand-mark--header,
+  .brand-mark--header-en {
+    width: 52px;
+    height: 46px;
+  }
+
   .site-header .brand-mark__text {
     display: none;
   }

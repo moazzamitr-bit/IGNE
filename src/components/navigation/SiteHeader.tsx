@@ -50,7 +50,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
       <header className={`site-header ${compact ? "site-header--compact" : ""}`} data-ready={ready ? "true" : "false"}>
         <div className="site-header__inner">
           <Link href={`/${locale}`} className="site-header__brand">
-            <BrandMark locale={locale} inverse />
+            <BrandMark locale={locale} inverse variant="header" />
           </Link>
           <nav className="desktop-nav" aria-label={locale === "fa" ? "ناوبری اصلی" : "Main navigation"}>
             {navigationItems[locale].map(([label, href]) => (
